@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9208908484115209459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/New Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Hello/Build/Desktop/New Bank.bank
+  Name: New Bank
+  StudioPath: bank:/New Bank
+  lastModified: 637956802307064578
+  FileSizes:
+  - Name: Desktop
+    Value: 828192
+  Exists: 1
 --- !u!114 &-6479560735056013260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,7 +39,7 @@ MonoBehaviour:
     Data3: -123241318
     Data4: -175724898
   Banks:
-  - {fileID: 2387785620745145865}
+  - {fileID: -9208908484115209459}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -42,14 +62,16 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 175613597386885256}
   - {fileID: 2387785620745145865}
+  - {fileID: -9208908484115209459}
   EditorEvents:
   - {fileID: -6479560735056013260}
+  - {fileID: 757807369616481190}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2387785620745145865}
   StringsBanks:
   - {fileID: 175613597386885256}
-  cacheTime: 637956766403003064
+  cacheTime: 637956802307064578
   cacheVersion: 131591
 --- !u!114 &175613597386885256
 MonoBehaviour:
@@ -66,11 +88,38 @@ MonoBehaviour:
   Path: Hello/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637956766403003064
+  lastModified: 637956802306755484
   FileSizes:
   - Name: Desktop
-    Value: 760
+    Value: 946
   Exists: 1
+--- !u!114 &757807369616481190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hello 2
+  m_EditorClassIdentifier: 
+  Path: event:/Hello 2
+  Guid:
+    Data1: 1305902669
+    Data2: 1259956104
+    Data3: -1297908580
+    Data4: 864855901
+  Banks:
+  - {fileID: -9208908484115209459}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 59115
 --- !u!114 &2387785620745145865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,8 +135,8 @@ MonoBehaviour:
   Path: Hello/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637956766402983307
+  lastModified: 637956802306745435
   FileSizes:
   - Name: Desktop
-    Value: 827712
+    Value: 1372
   Exists: 1

@@ -13,10 +13,15 @@ public class GetFMODSpectrumData : MonoBehaviour
     private FMOD.ChannelGroup _channelGroup;
     private FMOD.DSP _dsp; // Digital Signal Processor
     private FMOD.DSP_PARAMETER_FFT _fftparam;
+    [SerializeField] FMODUnity.StudioEventEmitter loudTrack;
 
     public static float[] bandBuffer = new float[8];
     [SerializeField] public static float[] frequencyBands = new float[8];
     float[] bufferDecrease = new float[8];
+
+    private float animLength = 0.05f;
+    private float timecCounter = 0f;
+    private bool isLoudTrackPlaying = false;
 
 
     public float[] _samples;
@@ -25,7 +30,6 @@ public class GetFMODSpectrumData : MonoBehaviour
     {
         //Prepare FMOD event
         PrepareFMODeventInstance();
-
         _samples = new float[_windowSize];
     }
 
@@ -41,10 +45,20 @@ public class GetFMODSpectrumData : MonoBehaviour
 
         _event.getChannelGroup(out _channelGroup);
         _channelGroup.addDSP(0, _dsp);
+        
     }
 
     private void Update()
     {
+        if (timecCounter < animLength && !isLoudTrackPlaying)
+        {
+            timecCounter += Time.deltaTime;
+        }
+        else if (timecCounter >= animLength && !isLoudTrackPlaying)
+        {
+            loudTrack.Play();
+            isLoudTrackPlaying = true;
+        }
         GetSpectrumData();
         MakeFrequencyBands();
         BandBuffer();
